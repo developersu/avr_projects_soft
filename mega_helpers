@@ -1,0 +1,8 @@
+avr-gcc -O2 -mmcu=atmega8 uart_atm8.c -o uart_atm8.o
+avr-objcopy -O ihex uart_atm8.o uart1.hex
+# avrdude -c usbasp -p m8 -U hfuse:w:0xd9:m -U lfuse:w:0xe1:m
+avrdude -c usbasp -p m8 -U flash:w:uart1.hex:i
+#
+#screen /dev/ttyUSB0 9600
+#avrdude -c usbasp -p m8 -U hfuse:r:hfuse.hex:h -U lfuse:r:lfuse.hex:h
+#http://eleccelerator.com/fusecalc/fusecalc.php?chip=attiny2313#

@@ -1,0 +1,7 @@
+avr-gcc -O2 -mmcu=attiny2313 uart.c -o uart.o
+avr-objcopy -O ihex uart.o uart.hex
+# avrdude -c usbasp -p t2313 -U hfuse:w:0xd9:m -U lfuse:w:0xe1:m
+# avrdude -c usbasp -p t2313 -U hfuse:r:hfuse.hex:m -U lfuse:r:lfuse.hex:m 
+avrdude -c usbasp -p t2313 -U flash:w:uart.hex:i
+#
+#screen /dev/ttyUSB0 9600
