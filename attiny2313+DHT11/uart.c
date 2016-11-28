@@ -91,12 +91,13 @@ int main(void)
 			sendToUart_str(outp[1]);
 		        sendToUart_str(" *C\r\n");                          	// перенос строки CR
 
-			for (i=0;i<3;i++)
-			{
-				outp[i][0] = 0;
-				outp[i][1] = 0;
-			}
 		}
+	}
+	
+	for (i=0;i<3;i++)
+	{
+		outp[i][0] = 0;
+		outp[i][1] = 0;
 	}
 	_delay_ms(1000);
     }
