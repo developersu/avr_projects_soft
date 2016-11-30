@@ -86,19 +86,23 @@ int main(void)
 			/* вывод на uart и обнуление */
 			itoa(stor[0],outp[0],10);
 			sendToUart_str(outp[0]);
-		        sendToUart_str("%\r\nt: ");                          	// перенос строки CR
+		        sendToUart_str("%\tt: ");                          	// перенос строки CR
 			itoa(stor[2],outp[1],10);
 			sendToUart_str(outp[1]);
 		        sendToUart_str(" *C\r\n");                          	// перенос строки CR
-
 		}
 	}
 	
-	for (i=0;i<3;i++)
-	{
+	for (i=0;i<2;i++){
 		outp[i][0] = 0;
 		outp[i][1] = 0;
+		outp[i][2] = 0;
 	}
-	_delay_ms(1000);
+
+	for (i=0;i<5;i++){
+		stor[i] = 0;
+	}
+
+	_delay_ms(500);
     }
 }
